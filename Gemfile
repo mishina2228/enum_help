@@ -4,7 +4,15 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'bundler'
-gem 'rails', '~> 7.0'
 gem 'rake'
 gem 'rspec'
 gem 'sqlite3'
+
+case version = ENV['RAILS_VERSION']
+when nil
+  gem 'rails', '~> 7.0'
+when 'edge'
+  gem 'rails', github: 'rails/rails'
+else
+  gem 'rails', version
+end

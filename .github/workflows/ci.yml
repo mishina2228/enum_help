@@ -16,6 +16,19 @@ jobs:
           - "3.0"
           - 3.1
           - head
+        rails-version:
+          - "edge"
+          - "~> 7.0.1"
+          - "~> 6.1.4"
+          - "~> 6.0.4"
+          - "~> 5.2.6"
+        exclude:
+          - ruby-version: 2.6
+            rails-version: "edge"
+          - ruby-version: 2.6
+            rails-version: "7.0.1"
+    env:
+      RAILS_VERSION: "${{ matrix.rails-version }}"
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
