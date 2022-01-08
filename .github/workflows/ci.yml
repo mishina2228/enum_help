@@ -27,6 +27,12 @@ jobs:
             rails-version: "edge"
           - ruby-version: 2.6
             rails-version: "~> 7.0.1"
+          - ruby-version: "3.0"
+            rails-version: "~> 5.2.6"
+          - ruby-version: 3.1
+            rails-version: "~> 5.2.6"
+          - ruby-version: head
+            rails-version: "~> 5.2.6"
     env:
       RAILS_VERSION: "${{ matrix.rails-version }}"
     steps:
