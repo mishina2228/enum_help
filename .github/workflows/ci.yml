@@ -26,7 +26,7 @@ jobs:
           - ruby-version: 2.6
             rails-version: "edge"
           - ruby-version: 2.6
-            rails-version: "7.0.1"
+            rails-version: "~> 7.0.1"
     env:
       RAILS_VERSION: "${{ matrix.rails-version }}"
     steps:
